@@ -2,7 +2,7 @@ import { PageHero, ProjectCard, SectionBlock } from '@/components'
 import { getPageBySlug, getProjects, mediaUrl } from '@/lib/payload'
 import { Container, MediaFrame, Text } from '@/primitives'
 
-export const dynamic = 'force-dynamic'
+export const revalidate = 60
 
 export default async function HomePage() {
   const [page, projects] = await Promise.all([

@@ -26,6 +26,7 @@ export function Nav() {
             <Link
               key={href}
               href={href}
+              prefetch
               className={[
                 'text-sm font-normal transition-opacity hover:opacity-70',
                 isActive
@@ -66,6 +67,7 @@ export function Nav() {
               <Link
                 key={href}
                 href={href}
+                prefetch
                 className="text-base text-foreground"
                 onClick={() => setOpen(false)}
               >
