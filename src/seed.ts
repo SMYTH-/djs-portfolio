@@ -11,10 +11,10 @@ async function seed() {
     {
       title: 'Home',
       slug: 'home' as const,
-      heroHeadline:
-        'Connecting people through design and technology to create experiences that matter.',
-      heroMetaName: 'Dom Smyth',
-      heroMetaRole: 'Product Engineer • Designer • Builder',
+      heroHeadline: 'I build websites people actually enjoy using.',
+      heroMetaName: 'WEB ENGINEER · LONDON',
+      heroMetaRole:
+        'React, Next.js and WordPress developer working with design-led teams and agencies.',
     },
     {
       title: 'Work',
@@ -26,8 +26,8 @@ async function seed() {
       slug: 'about' as const,
       heroHeadline:
         'Building products that connect people through design and technology.',
-      heroMetaName: 'Dom Smyth',
-      heroMetaRole: 'Product Engineer • Designer • Builder',
+      heroMetaName: 'Dominic Smyth',
+      heroMetaRole: 'Web Engineer',
     },
     {
       title: 'Contact',

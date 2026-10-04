@@ -17,7 +17,7 @@ export function MediaFrame({
   alt,
   aspect = '2/1',
   priority = false,
-  sizes = '(max-width: 768px) 100vw, 1230px',
+  sizes = '(min-width: 90rem) 83rem, (min-width: 78.75rem) 72.75rem, 100vw',
   className = '',
   fill = true,
   width,

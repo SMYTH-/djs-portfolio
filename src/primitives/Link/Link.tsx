@@ -17,7 +17,9 @@ export function Link({
     <NextLink
       className={[
         'text-accent transition-opacity hover:opacity-80',
-        underline ? 'underline-offset-4 hover:underline' : '',
+        underline
+          ? 'underline decoration-accent underline-offset-4 hover:opacity-70'
+          : '',
         className,
       ]
         .filter(Boolean)

@@ -14,15 +14,15 @@ export default async function AboutPage() {
   const page = await getPageBySlug('about')
 
   return (
-    <Container className="flex flex-col gap-16">
+    <Container className="flex flex-col gap-section-md">
       <PageHero
         headline={
           page?.heroHeadline ??
           'Building products that connect people through design and technology.'
         }
-        metaName={page?.heroMetaName ?? 'Dom Smyth'}
+        metaName={page?.heroMetaName ?? 'Dominic Smyth'}
         metaRole={
-          page?.heroMetaRole ?? 'Product Engineer • Designer • Builder'
+          page?.heroMetaRole ?? 'Web Engineer'
         }
       />
 

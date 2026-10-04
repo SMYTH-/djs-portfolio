@@ -16,7 +16,9 @@ export function SectionBlock({
   className = '',
 }: SectionBlockProps) {
   return (
-    <section className={['flex flex-col gap-6', className].filter(Boolean).join(' ')}>
+    <section
+      className={['flex flex-col gap-4', className].filter(Boolean).join(' ')}
+    >
       {label ? (
         <Text variant="label" as="p">
           {label}

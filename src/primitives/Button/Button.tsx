@@ -10,16 +10,17 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const variantStyles: Record<ButtonVariant, string> = {
-  primary: 'bg-foreground text-background hover:opacity-90',
+  primary:
+    'bg-accent text-accent-foreground hover:opacity-90 px-5 py-2.5',
   secondary:
-    'bg-transparent text-foreground border border-border hover:bg-foreground/5',
-  ghost: 'bg-transparent text-foreground hover:opacity-70',
+    'bg-transparent text-foreground border border-border hover:border-accent hover:text-accent px-5 py-2.5',
+  ghost: 'bg-transparent text-accent hover:opacity-70',
 }
 
 const sizeStyles: Record<ButtonSize, string> = {
-  sm: 'px-3 py-1.5 text-sm',
-  md: 'px-0 py-0 text-base',
-  lg: 'px-0 py-0 text-lg',
+  sm: 'text-body',
+  md: 'text-body',
+  lg: 'text-body-lg',
 }
 
 export function Button({

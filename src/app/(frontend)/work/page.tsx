@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 
 import { PageHero, ProjectCard, SectionBlock } from '@/components'
-import { getPageBySlug, getProjects, mediaUrl } from '@/lib/payload'
+import { getPageBySlug, getProjects, mediaSrc, mediaUrl } from '@/lib/payload'
 import { Container, Text } from '@/primitives'
 
 export const metadata: Metadata = {
@@ -36,7 +36,7 @@ export default async function WorkPage() {
       ]
 
   return (
-    <Container className="flex flex-col gap-16">
+    <Container className="flex flex-col gap-section-md">
       <PageHero
         headline={
           page?.heroHeadline ??
@@ -58,7 +58,7 @@ export default async function WorkPage() {
                 title={project.title}
                 href={`/work#${project.slug}`}
                 summary={project.summary}
-                imageSrc={mediaUrl(project.cover)}
+                imageSrc={mediaSrc(project.cover) ?? mediaUrl(project.cover)}
               />
             </div>
           ))}

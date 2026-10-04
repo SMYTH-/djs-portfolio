@@ -17,7 +17,7 @@ export const Default: Story = {
   args: {
     children: (
       <Text variant="body">
-        Content sits in a 1230px max-width column with wide gutters.
+        Content sits in a stepped max-width column with page-margin gutters.
       </Text>
     ),
   },

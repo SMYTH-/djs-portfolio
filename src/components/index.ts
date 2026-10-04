@@ -1,3 +1,5 @@
+export { MediaBlock } from './MediaBlock'
+export type { MediaBlockAspect, MediaBlockProps } from './MediaBlock'
 export { Nav } from './Nav'
 export { PageHero } from './PageHero'
 export type { PageHeroProps } from './PageHero'

@@ -12,11 +12,26 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
+export const Home: Story = {
+  args: {
+    eyebrow: 'WEB ENGINEER · LONDON',
+    headline: (
+      <>
+        I build websites people
+        <br />
+        actually enjoy using.
+      </>
+    ),
+    description:
+      'React, Next.js and WordPress developer working with design-led teams and agencies.',
+    cta: { href: '/work', label: 'View my work ↓' },
+  },
+}
+
 export const Default: Story = {
   args: {
-    headline:
-      'Connecting people through design and technology to create experiences that matter.',
-    metaName: 'Dom Smyth',
-    metaRole: 'Product Engineer • Designer • Builder',
+    headline: 'Selected work across product, systems, and craft.',
+    metaName: 'Dominic Smyth',
+    metaRole: 'Web Engineer',
   },
 }

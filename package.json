@@ -12,6 +12,9 @@
     "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
     "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
     "seed": "cross-env NODE_OPTIONS=--no-deprecation tsx src/seed.ts",
+    "db:tunnel": "bash scripts/db-tunnel.sh",
+    "db:push": "cross-env NODE_ENV=development PAYLOAD_FORCE_DRIZZLE_PUSH=true NODE_OPTIONS=--no-deprecation tsx src/scripts/push-schema.ts",
+    "regenerate:media": "cross-env NODE_OPTIONS=--no-deprecation tsx src/scripts/regenerate-media-sizes.ts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

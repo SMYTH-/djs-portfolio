@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 import { PageHero, SectionBlock } from '@/components'
 import { getPageBySlug } from '@/lib/payload'
+import { SITE_EMAIL, SITE_EMAIL_HREF } from '@/lib/site'
 import { Container, Link, Text } from '@/primitives'
 
 export const metadata: Metadata = {
@@ -14,7 +15,7 @@ export default async function ContactPage() {
   const page = await getPageBySlug('contact')
 
   return (
-    <Container className="flex flex-col gap-16">
+    <Container className="flex flex-col gap-section-md">
       <PageHero
         headline={
           page?.heroHeadline ??
@@ -30,7 +31,7 @@ export default async function ContactPage() {
           content is filled in.
         </Text>
         <div className="mt-2">
-          <Link href="mailto:hello@example.com">hello@example.com</Link>
+          <Link href={SITE_EMAIL_HREF}>{SITE_EMAIL}</Link>
         </div>
       </SectionBlock>
     </Container>

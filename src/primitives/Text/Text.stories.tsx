@@ -10,7 +10,15 @@ const meta = {
   argTypes: {
     variant: {
       control: 'select',
-      options: ['hero', 'sectionTitle', 'label', 'body', 'meta', 'link'],
+      options: [
+        'hero',
+        'sectionTitle',
+        'eyebrow',
+        'label',
+        'body',
+        'meta',
+        'link',
+      ],
     },
   },
 } satisfies Meta<typeof Text>
@@ -21,8 +29,27 @@ type Story = StoryObj<typeof meta>
 export const Hero: Story = {
   args: {
     variant: 'hero',
-    children:
-      'Connecting people through design and technology to create experiences that matter.',
+    children: (
+      <>
+        I build websites people
+        <br />
+        actually enjoy using.
+      </>
+    ),
+  },
+}
+
+export const SectionTitle: Story = {
+  args: {
+    variant: 'sectionTitle',
+    children: 'Scalable and built to last',
+  },
+}
+
+export const Eyebrow: Story = {
+  args: {
+    variant: 'eyebrow',
+    children: 'WEB ENGINEER · LONDON',
   },
 }
 
@@ -37,6 +64,13 @@ export const Body: Story = {
   args: {
     variant: 'body',
     children:
-      'My work sits at the intersection of digital product design and design systems.',
+      'React, Next.js and WordPress developer working with design-led teams and agencies.',
+  },
+}
+
+export const MetaLine: Story = {
+  args: {
+    variant: 'meta',
+    children: 'Dominic Smyth',
   },
 }

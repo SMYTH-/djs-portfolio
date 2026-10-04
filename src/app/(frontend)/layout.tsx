@@ -12,8 +12,8 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: {
-    default: 'Dom Smyth',
-    template: '%s · Dom Smyth',
+    default: 'Dominic Smyth',
+    template: '%s · Dominic Smyth',
   },
   description: 'Portfolio',
 }
@@ -23,7 +23,7 @@ export default function RootLayout({ children }: LayoutProps<'/'>) {
     <html lang="en" className={`${manrope.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col bg-background font-sans text-foreground">
         <SiteHeader />
-        <main className="flex-1 py-10 md:py-14">{children}</main>
+        <main className="flex-1 pt-section-sm">{children}</main>
         <SiteFooter />
       </body>
     </html>

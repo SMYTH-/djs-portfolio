@@ -1,6 +1,6 @@
-import { PageHero, ProjectCard, SectionBlock } from '@/components'
-import { getPageBySlug, getProjects, mediaUrl } from '@/lib/payload'
-import { Container, MediaFrame, Text } from '@/primitives'
+import { MediaBlock, PageHero, ProjectCard, SectionBlock } from '@/components'
+import { getPageBySlug, getProjects, mediaSrc, mediaUrl } from '@/lib/payload'
+import { Container, Text } from '@/primitives'
 
 export const revalidate = 60
 
@@ -10,10 +10,10 @@ export default async function HomePage() {
     getProjects({ featured: true }),
   ])
 
-  const headline =
-    page?.heroHeadline ??
-    'Connecting people through design and technology to create experiences that matter.'
-  const heroSrc = mediaUrl(page?.heroMedia) ?? '/media/placeholder.svg'
+  const heroSrc =
+    mediaSrc(page?.heroMedia) ??
+    mediaUrl(page?.heroMedia) ??
+    '/media/hero-temagami.jpg'
   const featured = projects.length
     ? projects
     : [
@@ -34,24 +34,39 @@ export default async function HomePage() {
       ]
 
   return (
-    <Container className="flex flex-col gap-20">
+    <Container className="flex flex-col gap-section-md">
       <PageHero
-        headline={headline}
-        metaName={page?.heroMetaName ?? 'Dom Smyth'}
-        metaRole={
-          page?.heroMetaRole ?? 'Product Engineer • Designer • Builder'
+        eyebrow="WEB ENGINEER · LONDON"
+        headline={
+          <>
+            I build websites people
+            <br />
+            actually enjoy using.
+          </>
         }
+        description="React, Next.js and WordPress developer working with design-led teams and agencies."
+        cta={{ href: '/work', label: 'View my work ↓' }}
       />
 
-      <MediaFrame src={heroSrc} alt="Hero" priority />
+      <MediaBlock
+        media={{
+          src: heroSrc,
+          alt: 'Dominic Smyth in Temagami, standing in snow at dusk',
+        }}
+        aspect="video"
+        priority
+        spacing="none"
+        background="none"
+        width="full"
+      />
 
       <SectionBlock
         label="Approach"
         title="Scalable and built to last"
       >
         <Text variant="body" className="max-w-3xl text-foreground/80">
-          Work at the intersection of product design, systems, and engineering —
-          turning complexity into structures people can understand, use, and
+          Work at the intersection of web engineering, systems, and craft —
+          turning complexity into interfaces people can understand, use, and
           evolve.
         </Text>
       </SectionBlock>
@@ -64,7 +79,7 @@ export default async function HomePage() {
               title={project.title}
               href={`/work#${project.slug}`}
               summary={project.summary}
-              imageSrc={mediaUrl(project.cover)}
+              imageSrc={mediaSrc(project.cover) ?? mediaUrl(project.cover)}
             />
           ))}
         </div>

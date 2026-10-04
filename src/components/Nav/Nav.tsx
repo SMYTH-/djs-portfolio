@@ -28,9 +28,9 @@ export function Nav() {
               href={href}
               prefetch
               className={[
-                'text-sm font-normal transition-opacity hover:opacity-70',
+                'text-body font-normal transition-opacity hover:opacity-70',
                 isActive
-                  ? 'text-foreground underline underline-offset-4'
+                  ? 'text-accent underline decoration-accent underline-offset-4'
                   : 'text-foreground/55',
               ].join(' ')}
               aria-current={isActive ? 'page' : undefined}
@@ -62,13 +62,13 @@ export function Nav() {
           id="mobile-nav"
           className="absolute inset-x-0 top-full border-b border-border bg-background md:hidden"
         >
-          <nav className="mx-auto flex max-w-[var(--content-max)] flex-col gap-4 px-[var(--gutter-mobile)] py-6">
+          <nav className="mx-auto flex max-w-content flex-col gap-4 px-page py-6">
             {links.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
                 prefetch
-                className="text-base text-foreground"
+                className="text-body-lg text-foreground"
                 onClick={() => setOpen(false)}
               >
                 {label}

@@ -13,11 +13,7 @@ export function Container({
 }: ContainerProps) {
   return (
     <Tag
-      className={[
-        'mx-auto w-full max-w-[var(--content-max)]',
-        'px-[var(--gutter-mobile)] md:px-[var(--gutter)]',
-        className,
-      ]
+      className={['mx-auto w-full max-w-content px-page', className]
         .filter(Boolean)
         .join(' ')}
     >
